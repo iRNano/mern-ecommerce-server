@@ -48,7 +48,7 @@ router.get("/:id", (req,res)=>{
 
 router.delete("/:id", isAdmin, (req,res)=>{
     Product.findOneAndDelete({_id:req.params.id}, (err,product)=>{
-        return res.json(product)
+        return res.status(200).json({product, status:200, message: "Product deleted successfully"})
     })
 })
 
@@ -60,7 +60,7 @@ router.put("/:id", upload.single('image'), isAdmin, (req,res)=>{
         updatedProduct = {...req.body, image: "/products/"+req.file.filename}
     }
     Product.findOneAndUpdate({_id:req.params.id}, updatedProduct, {new:true},(err,updatedProduct) => {
-        return res.json(updated)
+        return res.json({updatedProduct, status:200, message: "Product updated successfully"})
     } )
 })
 module.exports = router
