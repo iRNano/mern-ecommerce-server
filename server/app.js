@@ -3,8 +3,11 @@ const app = express()
 const PORT = process.env.PORT || 4000
 const cors = require("cors")
 const mongoose = require("mongoose")
-
-mongoose.connect("mongodb://localhost/b49-ecommerce", {
+/*
+mongodb+srv://adrian:<password>@mern-ecommerce-acv-sbxmy.mongodb.net/test?retryWrites=true&w=majority
+mongodb://localhost/b49-ecommerce
+*/
+mongoose.connect("mongodb+srv://adrian:Nanopogi1@mern-ecommerce-acv-sbxmy.mongodb.net/test?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: true
