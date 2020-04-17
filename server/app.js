@@ -22,5 +22,6 @@ app.use("/users", require("./routes/users"))
 app.use("/products", require("./routes/products"))
 app.use("/categories", require("./routes/categories"))
 app.use("/transactions", require("./routes/transactions"))
+app.use("/statuses", require("./routes/statuses"))
 
 app.listen(4000, ()=> console.log(`Server is running on port ${PORT}`))
